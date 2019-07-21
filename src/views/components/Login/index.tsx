@@ -46,7 +46,7 @@ class Login extends React.Component<IProps, any> {
           <Form.Item>
             {getFieldDecorator('userName', {
               initialValue: userName,
-              rules: [{ required: true, message: 'Please input your userName!' }],
+              rules: [{ required: true, message: '请输入用户名!' }],
             })(
               <Input
                 prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -57,7 +57,7 @@ class Login extends React.Component<IProps, any> {
           <FormItem>
             {getFieldDecorator('passWord', {
               initialValue: passWord,
-              rules: [{ required: true, message: 'Please input your Password!' }],
+              rules: [{ required: true, message: '请输入密码!' }],
             })(
               <Input
                 prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -68,7 +68,7 @@ class Login extends React.Component<IProps, any> {
           </FormItem>
           <FormItem style={{ textAlign: 'center' }}>
             <Button type="primary" htmlType="submit" className="login-form-button">
-              Log in
+              登录
         </Button>
           </FormItem>
         </Form>
