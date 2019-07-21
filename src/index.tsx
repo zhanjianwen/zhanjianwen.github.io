@@ -7,16 +7,19 @@ import registerServiceWorker from './registerServiceWorker';
 import api  from './views/apis/index'
 import * as moment from 'moment';
 import * as _ from 'lodash';
+import utils from './views/utils/index'
 declare global {
   interface Window {
     $api: any,
     moment:any,
-    _:any
+    _:any,
+    $utils:any
   }
 }
 window.$api = api;
 window.moment = moment;
 window._ = _;
+window.$utils = utils;
 ReactDOM.render(
   <App />,
   document.getElementById('root') as HTMLElement
