@@ -22,12 +22,12 @@ axios.interceptors.response.use(function (response) {
 }, function (error) {
   return Promise.reject(error)
 })
-
 const ajax: any = (url: any, data: any, method: any, options: any) => {
   if (options === undefined) {
     options = {}
   }
   options.url = url;
+  
   options.data = data;
   options.method = method;
   options.withCredentials = true;
