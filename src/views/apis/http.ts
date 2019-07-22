@@ -26,6 +26,7 @@ const ajax: any = (url: any, data: any, method: any, options: any) => {
     options = {}
   }
   options.url = url;
+  
   options.data = data;
   options.method = method;
   options.withCredentials = true;
