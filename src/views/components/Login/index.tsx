@@ -43,7 +43,7 @@ class Login extends React.Component<IProps, any> {
     return (
       <div className="login">
         <Form onSubmit={this.handleSubmit} className="login-form">
-          <Form.Item>
+          <FormItem>
             {getFieldDecorator('userName', {
               initialValue: userName,
               rules: [{ required: true, message: '请输入用户名!' }],
@@ -53,7 +53,7 @@ class Login extends React.Component<IProps, any> {
                 placeholder="用户名"
               />,
             )}
-          </Form.Item>
+          </FormItem>
           <FormItem>
             {getFieldDecorator('passWord', {
               initialValue: passWord,
