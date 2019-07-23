@@ -1,10 +1,10 @@
 import * as React from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import configs from './config'
 import Login from '../pages/login/login'
 import Admin from '../pages/admin/admin'
-export default class AppRouter extends React.Component {
-
+console.log(configs)
+class AppRouter extends React.Component {
   render() {
     return (
       <BrowserRouter>
@@ -16,3 +16,4 @@ export default class AppRouter extends React.Component {
     )
   }
 }
+export default AppRouter
