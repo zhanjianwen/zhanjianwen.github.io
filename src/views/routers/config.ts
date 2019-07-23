@@ -9,13 +9,25 @@ const configs: any = [{
   name: 'login',
   hidden: true,
   redirect: 'noRedirect',
-  component: Login
+  component: Login,
+  meta: {
+    auth: true,
+    title: '登录',
+    icon: 'nested',
+    noCache: true,
+  },
 }, {
-  path: '/Layout',
+  path: '/admin',
   component: Layout,
   name: 'Layout',
-  children: [{
-    path: '/',
+  meta: {
+    auth: true,
+    title: 'Layout',
+    icon: 'nested',
+    noCache: true,
+  },
+  childrens: [{
+    path: '/admin/home',
     name: 'index',
     component: Admin,
     meta: {
@@ -25,7 +37,7 @@ const configs: any = [{
       noCache: true,
     },
   }, {
-    path: '/documentation',
+    path: '/admin/documentation',
     name: 'index',
     component: Documentation,
     meta: {
@@ -35,7 +47,7 @@ const configs: any = [{
       noCache: true,
     },
   }, {
-    path: '/guide',
+    path: '/admin/guide',
     name: 'index',
     component: Guide,
     meta: {
