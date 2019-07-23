@@ -1,25 +1,21 @@
 const configs: any = [{
   path: '/login',
   name: 'login',
+  hidden: true,
+  redirect: 'noRedirect',
   component: () => import('../pages/login/login'),
-  meta: {
-    auth: false,
-    title: '登录'
-  },
 }, {
-  path: '/Loayout',
-  name: 'Loayout',
-  meta: {
-    auth: false,
-    title: '模板'
-  },
+  path: '/Layout',
+  name: 'Layout',
   children: [{
     path: '/',
     name: 'index',
     component: () => import('../pages/admin/admin'),
     meta: {
       auth: true,
-      title: '首页'
+      title: '首页',
+      icon: 'nested',
+      noCache:true,
     },
   }],
 }]
