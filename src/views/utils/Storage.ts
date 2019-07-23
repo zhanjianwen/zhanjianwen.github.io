@@ -1,23 +1,23 @@
 
 import * as Store from 'store'
-export interface StorageGet {
+export interface IStorage {
     key: string
-    value:any
+    value: any
 }
-const setStorage = (values: StorageGet) => {
+const setStorage = (values: IStorage) => {
     Store.set(values.key, values.value);
 }
-const getStorage = (values: StorageGet) => {
+const getStorage = (values: IStorage) => {
     Store.get(values.key);
 }
-const removeStorage = (values: StorageGet) => {
+const removeStorage = (values: IStorage) => {
     Store.remove(values.key);
 }
 const removeAllStorage = () => {
     Store.clearAll();
 }
-const StorageUtils: any = {
-    set:setStorage,
+const StorageUtils:object = {
+    set: setStorage,
     get: getStorage,
     remove: removeStorage,
     removeAll: removeAllStorage
