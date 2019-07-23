@@ -1,4 +1,4 @@
-import { StorageGet } from 'src/views/utils/Storage';
+import { IStorage } from 'src/views/utils/Storage';
 
 // import * as constants from './constants'
 
@@ -9,7 +9,7 @@ interface UserInfo {
 }
 export const postLogin = (payload: object) => {
   return (dispatch: any) => {
-    const loginState:StorageGet={
+    const loginState:IStorage={
       key:'loginState',
       value:true
     }
@@ -19,7 +19,7 @@ export const postLogin = (payload: object) => {
       userName: 'admin',
       loading: true
     }
-    const userInfoState:StorageGet={
+    const userInfoState:IStorage={
       key:'userInfo',
       value:info
     }

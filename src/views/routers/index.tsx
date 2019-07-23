@@ -1,16 +1,30 @@
 import * as React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+// Route
+import { BrowserRouter, Switch, } from 'react-router-dom'
 import configs from './config'
-import Login from '../pages/login/login'
-import Admin from '../pages/admin/admin'
-console.log(configs)
+// import Login from '../pages/login/login'
+// import Admin from '../pages/admin/admin'
+const RouteMap = (config: any) => {
+  console.log(config.config)
+  console.log(config)
+  // routers.routers.map((route: any) => {
+  //   if (route.children) {
+  //     return <RouteMap routers={route.children} />
+  //   } else {
+  //     return <div>123</div>
+  //   }
+  // })
+  return null
+}
 class AppRouter extends React.Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path='/login' component={Login}></Route>
-          <Route path='/' component={Admin}></Route>
+          {/* <RouteMap routers={configs} /> */}
+          {configs.map((route: any, i: number) => {
+            return <RouteMap config={route} key={i} />
+          })}
         </Switch>
       </BrowserRouter>
     )
