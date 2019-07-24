@@ -1,0 +1,1 @@
+export const DELETE_TOKEN='loginOut/DELETE_TOKEN';
