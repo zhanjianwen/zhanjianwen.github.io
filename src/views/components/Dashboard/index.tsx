@@ -123,6 +123,7 @@ import { ReactHTML } from 'react'
 import { Layout } from 'antd';
 const { Sider, Content } = Layout;
 import Menu, { IMenuItem } from '../Layout/Menu'
+import AppRouter from '../../routers/index'
 import Tags from '../Layout/Tags'
 // import Header from '../Layout/Header'
 import './index.less'
@@ -137,10 +138,9 @@ interface IProps {
   location: ILocation
   history: IHistory
   isLogin: () => void
-  token: string
+  token: string,
 }
 class App extends React.Component<IProps> {
-  public timer: any
   public menuList = [
     { label: '首页', url: '/', name: 'home', icon: 'home', key: 'home' },
     { label: '文档', url: '/documentation', name: 'documentation', icon: 'home', key: 'documentation' },
@@ -208,7 +208,7 @@ class App extends React.Component<IProps> {
     this.setState({ theme: !this.state.theme })
   }
   public render() {
-    const { children, location } = this.props
+    const { location} = this.props
     const { collapsed, tagList, theme } = this.state
     // const isLogin = location.pathname === '/login'
     console.log(this.props)
@@ -252,7 +252,7 @@ class App extends React.Component<IProps> {
           <Content
             className="content"
           >
-            <div>{children}</div>
+            <AppRouter  />
           </Content>
         </Layout>
       </Layout>

@@ -1,12 +1,5 @@
 // // import loadable from "@loadable/component";
-import Login from '../pages/login/login'
-import dashboard from '../components/Dashboard/index'
-import Home from '../components/Home/index'
 
-import NotFound from '../components/NotFound/index'
-// import Admin from '../pages/admin/admin'
-import Documentation from '../pages/documentation/documentation'
-import Guide from '../pages/guide/guide'
 // const configs: any = [{
 //   path: '/login',
 //   name: 'login',
@@ -77,60 +70,82 @@ import Guide from '../pages/guide/guide'
 //   ],
 // }]
 const configs: any = [
+  // {
+  //   path: '/login',
+  //   hidden: true,
+  //   component: Login,
+  //   meta: {
+  //     title: '登录',
+  //     icon: 'home',
+  //     affix: true
+  //   }
+  // },
+  // {
+  //   path: '/404',
+  //   hidden: true,
+  //   component: NotFound,
+  //   meta: {
+  //     title: '404',
+  //     icon: 'home',
+  //     affix: true
+  //   }
+  // },
+  // {
+  //   path: '/dashboard',
+  //   name: 'dashboard',
+  //   component: dashboard,
+  //   meta: {
+  //     title: '首页',
+  //     icon: 'home',
+  //     affix: true
+  //   }
+  // }, {
+  //   path: '/test',
+  //   title: 'test',
+  //   icon: 'switcher',
+  //   children: [
+  //     {
+  //       path: '/test/documentation',
+  //       component: Documentation,
+  //       name: 'Documentation',
+  //       meta: {
+  //         title: '文档',
+  //         icon: 'documentation',
+  //         affix: true
+  //       }
+  //     },
+  //     {
+  //       path: '/test/guide',
+  //       component: Guide,
+  //       name: 'Guide',
+  //       meta: {
+  //         title: '引导',
+  //         icon: 'guide',
+  //         noCache: true
+  //       }
+  //     }]
+
+  // }
   {
-    path: '/login',
-    component: Login,
-    hidden: true, meta: {
-      title: '首页',
-      icon: 'Home',
-      affix: true
-    }
-  },
-  {
-    path: '/404',
-    component: NotFound,
-    hidden: true,
-    meta: {
-      title: '首页',
-      icon: 'Home',
-      affix: true
-    }
+    path: '/',
+    title: '首页',
+    icon: 'mobile',
+    component:'Home'
   },
   {
     path: '/dashboard',
-    name: 'dashboard',
-    component:dashboard,
-    children: [{
-      path: '/',
-      component: Home,
-      name: 'Home',
-      meta: {
-        title: '首页',
-        icon: 'Home',
-        affix: true
-      }
+    title: 'dashboard',
+    icon: 'scan',
+    childrens: [{
+      path: '/dashboard/documentation',
+      title: '按钮',
+      component: 'Documentation'
     },
-    {
-      path: '/documentation',
-      component: Documentation,
-      name: 'Documentation',
-      meta: {
-        title: '文档',
-        icon: 'documentation',
-        affix: true
-      }
-    },
-    {
-      path: '/guide',
-      component: Guide,
-      name: 'Guide',
-      meta: {
-        title: '引导',
-        icon: 'guide',
-        noCache: true
-      }
-    }]
+    ],
   },
+  // Login, dashboard, NotFound,
+  // Documentation,
+  // Guide
 ]
 export default configs;
 // export default {

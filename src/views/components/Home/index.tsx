@@ -1,9 +1,9 @@
 import * as React from 'react'
-class NotFound extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <div>index</div>
     );
   }
 }
-export default NotFound
+export default Home
