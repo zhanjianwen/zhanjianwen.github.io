@@ -49,7 +49,7 @@ class LayoutMenu extends React.Component<IProps> {
     return nextState
   }
   public state = {
-    key: '1',
+    key: 'home',
     openKeys: '',
     pathname: '/'
   }

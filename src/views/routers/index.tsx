@@ -94,8 +94,17 @@ export default class AppRouter extends React.Component {
                     />
                   )
                 }
-                console.log(r)
-                return !r.childrens ? route(r) : r.childrens.map((r: any) => route(r));
+                const LayoutRoute=(r:any)=>{
+                //   console.log(r)
+                //   const wrappedComponent=()
+                //   const Component = r.component;
+                //   <Component>
+                    
+                //   </Component>
+                //  return wrappedComponent
+                 return  r.children.map((r: any) => route(r))
+                }
+                return !r.children ? route(r) :LayoutRoute(r);
               })
           }
           <Route render={() => <Redirect to="/404" />} />
