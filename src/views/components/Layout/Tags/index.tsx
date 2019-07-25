@@ -19,20 +19,20 @@ class Tags extends React.Component<IProps> {
               <Link to={item.url || ''} key={item.key}>
                 <Tag color={item.url === pathname ? '#1890ff' : 'blue'}>
                   <Icon type={item.icon} className="big-icon-font right" />
-                  {item.label}
+                  <a className="icon-label">{item.label}</a>
                 </Tag>
               </Link>
             ) : (
-              <Link to={item.url || ''} key={item.key}>
-                <Tag
-                  color={item.url === pathname ? '#1890ff' : 'blue'}
-                  onClose={() => onClose(item)}
-                  closable={true}>
-                  <Icon type={item.icon} className="icon-font right" />
-                  {item.label}
-                </Tag>
-              </Link>
-            )
+                <Link to={item.url || ''} key={item.key}>
+                  <Tag
+                    color={item.url === pathname ? '#1890ff' : 'blue'}
+                    onClose={() => onClose(item)}
+                    closable={true}>
+                    <Icon type={item.icon} className="icon-font right" />
+                    <a className="icon-label">{item.label}</a>
+                  </Tag>
+                </Link>
+              )
         )}
       </div>
     )

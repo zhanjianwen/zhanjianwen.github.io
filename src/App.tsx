@@ -1,14 +1,32 @@
+// import * as React from 'react';
+// import './App.less';
+
+// class App extends React.Component {
+//   public render() {
+//     return (
+//       <div className="App">
+//         {this.props.children}
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
 import * as React from 'react';
-import './App.less';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import NotFound from './views/components/NotFound';
+import Login from './views/components/Login';
+import Dashboard from './views/components/Dashboard';
 
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        {this.props.children}
-      </div>
-    );
-  }
-}
-
-export default App;
+export default () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" render={() => <Redirect to="/admin/home" push />} />
+      <Route path="/admin" component={Dashboard} />
+      <Route path="/404" component={NotFound} />
+      <Route path="/login" component={Login} />
+      {/* <Route component={NotFound} /> */}
+    </Switch>
+  </Router>
+)
