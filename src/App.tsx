@@ -1,22 +1,7 @@
-// import * as React from 'react';
-// import './App.less';
-
-// class App extends React.Component {
-//   public render() {
-//     return (
-//       <div className="App">
-//         {this.props.children}
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
 import * as React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NotFound from './views/components/NotFound';
-import Login from './views/components/Login';
+import Login from './views/pages/login/login';
 import Dashboard from './views/components/Dashboard';
 
 export default () => (

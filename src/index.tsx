@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
-// import AppRouter from './views/routers/index'
 import './index.css';
 import 'antd/dist/antd.css';
 import registerServiceWorker from './registerServiceWorker';
@@ -26,9 +25,7 @@ window._ = _;
 window.$utils = utils;
 ReactDOM.render(
   <Provider store={store}>
-    {/* <AppRouter> */}
-      <App />
-    {/* </AppRouter> */}
+    <App />
   </Provider>,
   document.getElementById('root') as HTMLElement
 );

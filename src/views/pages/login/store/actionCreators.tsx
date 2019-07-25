@@ -23,6 +23,7 @@ export const postLogin = (payload: object) => {
       key:'userInfo',
       value:info
     }
+    console.log(userInfoState)
     window.$utils.Storage.set(userInfoState)
     // window.localStorage.userInfo = JSON.stringify(res.user);
     // window.$api.system.postLogin(payload).then((res: any) => {

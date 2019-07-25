@@ -3,7 +3,6 @@ import { Form, Input, Icon, Button } from 'antd';
 import { FormComponentProps } from 'antd/lib/form';
 import './index.less';
 const FormItem = Form.Item
-
 interface IProps extends FormComponentProps {
   /**用户名 */
   userName: string,
