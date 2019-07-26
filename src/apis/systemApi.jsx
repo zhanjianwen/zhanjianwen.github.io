@@ -6,6 +6,7 @@ export default {
     return config.getUrl(this.name, url);
   },
   postLogin(data) {
-    return $http.post(this.getUrl(`/login`), data);
+    return $http.post(`/api/login`, data);
   },
+  
 }

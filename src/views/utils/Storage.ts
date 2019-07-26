@@ -7,16 +7,16 @@ export interface IStorage {
 const setStorage = (values: IStorage) => {
     Store.set(values.key, values.value);
 }
-const getStorage = (values: IStorage) => {
-    Store.get(values.key);
+const getStorage = (value: string) => {
+    Store.get(value);
 }
-const removeStorage = (values: IStorage) => {
-    Store.remove(values.key);
+const removeStorage = (value: string) => {
+    Store.remove(value);
 }
 const removeAllStorage = () => {
     Store.clearAll();
 }
-const StorageUtils:object = {
+const StorageUtils: object = {
     set: setStorage,
     get: getStorage,
     remove: removeStorage,

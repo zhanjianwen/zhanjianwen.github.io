@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Layout } from 'antd';
-const { Sider, Content } = Layout;
+const { Sider, Content,Footer } = Layout;
 import LayoutMenu, { IMenuItem } from '../Layout/Menu'
 import AppRouter from '../../routers/index'
 import Tags from '../Layout/Tags'
@@ -30,7 +30,7 @@ class Dashboard extends React.Component<IProps> {
     {
       label: '组件', icon: 'home', key: 'components',
       children: [
-        {label: '富文本编辑', url: '/admin/tinymce', icon: 'home', key: 'tinymce'}
+        { label: '富文本编辑', url: '/admin/tinymce', icon: 'home', key: 'tinymce' }
       ]
     },
   ]
@@ -72,7 +72,6 @@ class Dashboard extends React.Component<IProps> {
   render() {
     const { location } = this.props
     const { theme, tagList, collapsed } = this.state;
-    // const isLogin = location.pathname === '/login'
     return (
       <Layout className="menu" >
         <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -103,6 +102,9 @@ class Dashboard extends React.Component<IProps> {
           >
             <AppRouter />
           </Content>
+          <Footer style={{ textAlign: 'center' }}>
+            React-Admin ©{new Date().getFullYear()} Created by 865470087@qq.com
+                        </Footer>
         </Layout>
       </Layout>
     )

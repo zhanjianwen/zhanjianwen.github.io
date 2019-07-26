@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import NotFound from './views/components/NotFound';
 import Login from './views/pages/login/login';
 import Dashboard from './views/components/Dashboard';
-
 export default () => (
   <Router>
     <Switch>

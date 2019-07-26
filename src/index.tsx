@@ -4,13 +4,20 @@ import App from './App';
 import './index.less';
 import 'antd/dist/antd.css';
 import registerServiceWorker from './registerServiceWorker';
-import api from './views/apis/index'
+import api from './apis/index'
 import * as moment from 'moment';
 import * as _ from 'lodash';
 import utils from './views/utils/index'
-
 import { Provider } from 'react-redux'
 import store from './views/redux'
+
+
+
+
+
+import './mock/login'
+import './mock/logout'
+
 declare global {
   interface Window {
     $api: any,
