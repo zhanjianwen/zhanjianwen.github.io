@@ -18,11 +18,11 @@ interface IProps {
   theme: boolean
 }
 class Dashboard extends React.Component<IProps> {
-  // public componentDidMount() {
-  //   this.setState({
-  //     tagList: JSON.parse(localStorage.getItem('tagList') || '[]')
-  //   })
-  // }
+  public componentDidMount() {
+    this.setState({
+      tagList: JSON.parse(localStorage.getItem('tagList') || '[]')
+    })
+  }
   public menuList = [
     { label: '首页', url: '/admin/home', icon: 'home', key: 'home' },
     { label: '文档', url: '/admin/documentation', icon: 'home', key: 'documentation' },
@@ -74,7 +74,7 @@ class Dashboard extends React.Component<IProps> {
     const { theme, tagList, collapsed } = this.state;
     // const isLogin = location.pathname === '/login'
     return (
-      <Layout className="menu">
+      <Layout className="menu" >
         <Sider trigger={null} collapsible collapsed={collapsed}>
           <div className="logo">Admin</div>
           <LayoutMenu
