@@ -17,6 +17,11 @@ export default (state = defaultState, action: any) => {
         // passWord:action.passWord,
         loading: true
       });
+    case constants.REQUEST_RETOKEN:
+      return state.merge({
+        token: action.token,
+        loading: true
+      })  
     // return state.merge({
     //     ticketInfo: fromJS(action.ticketInfo),
     //     token: fromJS(action.token)

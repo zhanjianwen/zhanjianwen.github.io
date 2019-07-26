@@ -6,6 +6,7 @@ import AppRouter from '../../routers/index'
 import Tags from '../Layout/Tags'
 import Header from '../../pages/header/header'
 import './index.less'
+import logoImg from '../../../statics/images/selfimpro.png'
 export interface IHistory {
   push: (pathname: string) => void
 }
@@ -75,7 +76,9 @@ class Dashboard extends React.Component<IProps> {
     return (
       <Layout className="menu" >
         <Sider trigger={null} collapsible collapsed={collapsed}>
-          <div className="logo">Admin</div>
+          <div className="logo">
+            <img src={logoImg}></img>
+          </div>
           <LayoutMenu
             theme={theme}
             menuList={this.menuList}

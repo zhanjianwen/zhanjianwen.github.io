@@ -22,18 +22,17 @@ export const postLogin = (payload: object) => {
       key: 'userInfo',
       value: info
     }
-    window.$utils.Storage.set(userInfoState)
-    // window.localStorage.userInfo = JSON.stringify(res.user);
+    const userLoginState: IStorage = {
+      key: 'loginState',
+      value: true
+    }
     window.$api.system.postLogin(payload).then((res: any) => {
       if (res.isSucc) {
         message.success(res.message);
-        window.localStorage.setItem('loginState', 'true');
-        window.localStorage.userInfo = JSON.stringify(res.result);
+        window.$utils.Storage.set(userInfoState);
+        window.$utils.Storage.set(userLoginState)
         dispatch({ type: constants.REQUEST_TOKEN, token: res.result.token })
       }
     })
   }
-}
-export const postLogout=(payload:object)=>{
-  
 }

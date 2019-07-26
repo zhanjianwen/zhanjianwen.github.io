@@ -4,18 +4,18 @@ import { actionCreators } from './store'
 import Header from '../../components/Layout/Header'
 
 export const mapStateToProps = (state: any) => {
-    return {
-        userName: state.getIn(['login', 'userName']),
-    }
+  return {
+    userName: state.getIn(['login', 'userName']),
+  }
 }
 export const mapDispatchToProps = (dispatch: any) => {
-    return {
-        logout: () => {
-            dispatch(actionCreators.loginOut({ type: DELETE_TOKEN }))
-        }
+  return {
+    logout: () => {
+      dispatch(actionCreators.postLogout({ type: DELETE_TOKEN }))
     }
+  }
 }
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Header)

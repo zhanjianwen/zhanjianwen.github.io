@@ -23,9 +23,7 @@ const mapDispatchToProps = (dispatch: any) => ({
     dispatch(actionCreators.postLogin(payload))
     // dispatch({ type: REQUEST_TOKEN, payload })
   },
-  logout:(payload:object)=>{
-    dispatch(actionCreators.postLogout(payload))
-  }
+
 })
 const LoginMap: any = connect(
   mapStateToProps,
