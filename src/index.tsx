@@ -34,6 +34,7 @@ declare global {
     moment: any,
     _: any,
     $utils: any
+    tinymce:any
   }
 }
 window.$api = api;
