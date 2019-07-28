@@ -11,20 +11,20 @@ interface IProps extends FormComponentProps {
   token?: string,
   loading: boolean,
   login: (payload: object) => void,
-  history: IPush
+  history: IPush,
 }
 interface IPush {
   push: (pathname: string) => void
 }
 
 class Login extends React.Component<IProps, any> {
-  public static getDerivedStateFromProps(props: IProps) {
-    const { history, token } = props;
-    if (token) {
-      history.push('/')
-    }
-    return null
-  }
+  // public static getDerivedStateFromProps(props: IProps) {
+  //   const { history, token } = props;
+  //   if (token) {
+  //     history.push('/')
+  //   }
+  //   return null
+  // }
   public state = {}
   public handleSubmit = (e: any) => {
     e.preventDefault()
@@ -32,6 +32,7 @@ class Login extends React.Component<IProps, any> {
     form.validateFields((err, values: object) => {
       if (!err) {
         login(values)
+        this.props.history.push('/')
       }
     })
   }

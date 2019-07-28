@@ -11,17 +11,12 @@ const defaultState = fromJS({
 
 export default (state = defaultState, action: any) => {
   switch (action.type) {
-    case constants.REQUEST_TOKEN:
+    case constants.DELETE_TOKEN:
       return state.merge({
         token: action.token,
         // passWord:action.passWord,
         loading: true
       });
-    case constants.REQUEST_RETOKEN:
-      return state.merge({
-        token: action.token,
-        loading: true
-      })  
     // return state.merge({
     //     ticketInfo: fromJS(action.ticketInfo),
     //     token: fromJS(action.token)
@@ -29,4 +24,6 @@ export default (state = defaultState, action: any) => {
     default:
       return state
   }
+
+
 }

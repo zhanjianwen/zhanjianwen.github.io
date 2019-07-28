@@ -2,7 +2,6 @@ import Login from '../../components/Login'
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
 import { withRouter } from 'react-router-dom'
-
 const mapStateToProps = (state:any) => {
   return { 
     userName:state.getIn(['login','userName']),
@@ -23,7 +22,6 @@ const mapDispatchToProps = (dispatch: any) => ({
     dispatch(actionCreators.postLogin(payload))
     // dispatch({ type: REQUEST_TOKEN, payload })
   },
-
 })
 const LoginMap: any = connect(
   mapStateToProps,

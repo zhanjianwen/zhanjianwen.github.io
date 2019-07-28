@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Layout } from 'antd';
-const { Sider, Content,Footer } = Layout;
+const { Sider, Content } = Layout;
 import LayoutMenu, { IMenuItem } from '../Layout/Menu'
 import AppRouter from '../../routers/index'
 import Tags from '../Layout/Tags'
@@ -20,18 +20,21 @@ interface IProps {
 }
 class Dashboard extends React.Component<IProps> {
   public componentDidMount() {
-    this.setState({
-      tagList: JSON.parse(localStorage.getItem('tagList') || '[]')
-    })
+    // if(!window.localStorage.getItem('loginState')){
+    //   this.props.history.push('/login');
+    // }
+    // this.setState({
+    //   tagList: JSON.parse(localStorage.getItem('tagList') || '[]')
+    // })
   }
   public menuList = [
     { label: '首页', url: '/admin/home', icon: 'home', key: 'home' },
-    { label: '文档', url: '/admin/documentation', icon: 'home', key: 'documentation' },
-    { label: '引导', url: '/admin/guide', icon: 'home', key: 'guide' },
+    { label: '文档', url: '/admin/documentation', icon: 'snippets', key: 'documentation' },
+    { label: '引导', url: '/admin/guide', icon: 'api', key: 'guide' },
     {
-      label: '组件', icon: 'home', key: 'components',
+      label: '组件', icon: 'appstore', key: 'components',
       children: [
-        { label: '富文本编辑', url: '/admin/tinymce', icon: 'home', key: 'tinymce' }
+        { label: '富文本编辑', url: '/admin/tinymce', icon: 'file-markdown', key: 'tinymce' }
       ]
     },
   ]
@@ -95,19 +98,12 @@ class Dashboard extends React.Component<IProps> {
             tagList={tagList}
             pathname={location.pathname}
             onClose={this.onClose} />
-          <Content
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              background: '#fff',
-              minHeight: 280,
-            }}
-          >
+          <Content>
             <AppRouter />
           </Content>
-          <Footer style={{ textAlign: 'center' }}>
-            React-Admin ©{new Date().getFullYear()} Created by 865470087@qq.com
-                        </Footer>
+          {/* <Footer style={{ textAlign: 'center' }}>
+            React-Admin ©{new Date().getFullYear()} Created by zhanjianwen163@163.com
+                        </Footer> */}
         </Layout>
       </Layout>
     )

@@ -19,7 +19,7 @@ class Tags extends React.Component<IProps> {
               <Link to={item.url || ''} key={item.key}>
                 <Tag color={item.url === pathname ? '#1890ff' : 'blue'}>
                   <Icon type={item.icon} className="big-icon-font right" />
-                  <a className="icon-label">{item.label}</a>
+                  {item.label}
                 </Tag>
               </Link>
             ) : (
@@ -29,7 +29,7 @@ class Tags extends React.Component<IProps> {
                     onClose={() => onClose(item)}
                     closable={true}>
                     <Icon type={item.icon} className="icon-font right" />
-                    <a className="icon-label">{item.label}</a>
+                    {item.label}
                   </Tag>
                 </Link>
               )

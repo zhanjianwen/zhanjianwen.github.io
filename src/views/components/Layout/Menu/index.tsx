@@ -24,7 +24,7 @@ interface IProps {
 class LayoutMenu extends React.Component<IProps> {
   // 匹配当前路由，保持菜单选中
   public static getDerivedStateFromProps(nextProps: IProps, state: IState) {
-    const { pathname, menuList } = nextProps
+    const { pathname, menuList } = nextProps;
     if (state.pathname === pathname) {
       return null
     }

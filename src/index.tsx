@@ -17,6 +17,16 @@ import store from './views/redux'
 
 import './mock/login'
 import './mock/logout'
+import './mock/home'
+
+
+
+
+
+
+
+
+
 
 declare global {
   interface Window {

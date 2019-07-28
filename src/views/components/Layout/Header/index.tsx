@@ -10,10 +10,12 @@ interface IProps extends IHistory {
   toggle: () => void
   logout: () => void
 }
-
 class Headers extends React.Component<IProps> {
   public onClick = () => {
-    this.props.logout()
+    // this.props.logout()
+    window.$utils.Storage.remove('userInfo');
+    window.$utils.Storage.remove('loginState');
+    window.$utils.Storage.remove('tagList');
     this.props.push('/login')
   }
   public render() {
