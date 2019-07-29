@@ -23,9 +23,9 @@ class Dashboard extends React.Component<IProps> {
     // if(!window.localStorage.getItem('loginState')){
     //   this.props.history.push('/login');
     // }
-    // this.setState({
-    //   tagList: JSON.parse(localStorage.getItem('tagList') || '[]')
-    // })
+    this.setState({
+      tagList: JSON.parse(localStorage.getItem('tagList') || '[]')
+    })
   }
   public menuList = [
     { label: '首页', url: '/admin/home', icon: 'home', key: 'home' },

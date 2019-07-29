@@ -19,7 +19,7 @@ class Home extends React.Component<IProps>{
   public componentDidUpdate() {
     if (JSON.stringify(this.state.ChartData) === '{}') {
       this.setState((prevState: any, props) => ({
-        ChartData: props.list.toJS().LineChartDatas[prevState.type]
+        ChartData: props.list.toJS().LineChartDatas ? props.list.toJS().LineChartDatas[prevState.type] : []
       }));
     }
   }
@@ -37,7 +37,7 @@ class Home extends React.Component<IProps>{
   //   )
   // }
   public handleSetLineChartData = (key: string) => {
-    if(this.props.list){
+    if (this.props.list) {
       const newList = this.props.list.toJS().LineChartDatas;
       if (this.state.type == key) {
         this.setState({ type: this.state.type, ChartData: this.state.ChartData })
@@ -46,7 +46,7 @@ class Home extends React.Component<IProps>{
         )
       }
     }
-   
+
     // this.setState((_prevState, props) => {
     //   const newList = props.list.toJS();
     //   return ({type:key,ChartData:newList[key]})
@@ -71,21 +71,21 @@ class Home extends React.Component<IProps>{
             <Row gutter={16}>
               <Col className="gutter-row" span={8}>
                 <div className="gutter-box">
-                  <div className="card-panel card-panel-col" style={{height: 'auto',padding: '16px 16px 0'}}>
+                  <div className="card-panel card-panel-col" style={{ height: 'auto', padding: '16px 16px 0' }}>
                     <RaddarChart datas={newList} />
                   </div>
                 </div>
               </Col>
               <Col className="gutter-row" span={8}>
                 <div className="gutter-box">
-                  <div className="card-panel card-panel-col" style={{height: 'auto',padding: '16px 16px 0'}}>
+                  <div className="card-panel card-panel-col" style={{ height: 'auto', padding: '16px 16px 0' }}>
                     <PieChart datas={newList} />
                   </div>
                 </div>
               </Col>
               <Col className="gutter-row" span={8}>
                 <div className="gutter-box">
-                  <div className="card-panel card-panel-col" style={{height: 'auto',padding: '16px 16px 0'}}>
+                  <div className="card-panel card-panel-col" style={{ height: 'auto', padding: '16px 16px 0' }}>
                     <BarChart datas={newList} />
                   </div>
                 </div>
