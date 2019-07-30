@@ -19,7 +19,7 @@ interface IProps {
   theme: boolean
 }
 class Dashboard extends React.Component<IProps> {
-  public componentDidMount() {
+  public componentWillMount() {
     // if(!window.localStorage.getItem('loginState')){
     //   this.props.history.push('/login');
     // }

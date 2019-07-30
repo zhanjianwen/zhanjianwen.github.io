@@ -9,10 +9,6 @@ const mapStateToProps = (state: any) => {
   }
 }
 const mapDispatchToProps = (dispatch: any) => ({
-  // homeList: (payload: object) => {
-  //   dispatch(actionCreators.postHome({ type: HOME_LIST }))
-  //   // dispatch({ type: REQUEST_TOKEN, payload })
-  // },
     homeList: (payload: object) => {
       dispatch(actionCreators.postHome(payload))
   },
