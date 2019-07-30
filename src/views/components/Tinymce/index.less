@@ -3,6 +3,7 @@
   margin: 30px 50px;
   background-color: #fff;
   position: relative;
+
   &>aside {
     background: #eef1f6;
     padding: 8px 24px;
@@ -15,5 +16,20 @@
     color: #2c3e50;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .tinymce-textarea {
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  .editor-custom-btn-container {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+  }
+
+  .editor-upload-btn {
+    display: inline-block;
   }
 }

@@ -80,7 +80,7 @@ import {
   fontsizeFormats,
   fontFormats
 } from './font';
-// import UploadImage from './UploadImage';
+import EditorImage from './components/EditorImage';
 
 interface IProps {
   tinymceId: string,
@@ -89,6 +89,7 @@ interface IProps {
   menubar: string,
   height: number,
   getContent: (value: any) => void,
+
 };
 const tinymceCDN = 'https://cdn.jsdelivr.net/npm/tinymce-all-in-one@4.9.3/tinymce.min.js'
 class Tinymce extends React.Component<IProps> {
@@ -190,12 +191,13 @@ class Tinymce extends React.Component<IProps> {
   /**
    * 上传图片成功回调
    *  */
-  imageSuccessCBK(arr: any) {
+  public imageSuccessCBK = (arr: any) => {
     const { tinymceId } = this.props
     arr.forEach((v: any) => {
       window.tinymce.get(tinymceId).insertContent(`<img class="wscnph" src="${v.url}" >`)
     })
   }
+
   render() {
     // loading,
     const { tinymceId } = this.props
@@ -204,7 +206,6 @@ class Tinymce extends React.Component<IProps> {
     //   <Page.Header breadcrumb={['富文本实例']} title={'富文本实例'} />
     // );
     return (
-
       <div className="tinymce">
         <aside>
           <span>富文本是管理后台一个核心的功能，但同时又是一个有很多坑的地方。在选择富文本的过程中我也走了不少的弯路，市面上常见的富文本都基本用过了，最终权衡了一下选择了Tinymce。更详细的富文本比较和介绍见</span>
@@ -215,7 +216,7 @@ class Tinymce extends React.Component<IProps> {
             <textarea id={tinymceId} className='tinymce-textarea' />
           </div>
           <div className="editor-custom-btn-container">
-            {/* <UploadImage className="editor-upload-btn" imageSuccessCBK={(arr)=>{this.imageSuccessCBK(arr)}}/> */}
+            <EditorImage successCBK={this.imageSuccessCBK} />
           </div>
           <Button type="primary" onClick={() => { this.saveToGetContent() }}>保存</Button>
         </div>
