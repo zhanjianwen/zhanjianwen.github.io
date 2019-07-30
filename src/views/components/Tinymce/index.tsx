@@ -211,7 +211,7 @@ class Tinymce extends React.Component<IProps> {
           <span>富文本是管理后台一个核心的功能，但同时又是一个有很多坑的地方。在选择富文本的过程中我也走了不少的弯路，市面上常见的富文本都基本用过了，最终权衡了一下选择了Tinymce。更详细的富文本比较和介绍见</span>
           <a target="_blank" className="link-type" href="https://panjiachen.github.io/vue-element-admin-site/component/rich-editor.html">文档</a>
         </aside>
-        <div>
+        <div className="tinymce-container">  
           <div>
             <textarea id={tinymceId} className='tinymce-textarea' />
           </div>
