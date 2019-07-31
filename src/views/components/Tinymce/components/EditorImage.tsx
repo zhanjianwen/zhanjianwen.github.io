@@ -3,16 +3,16 @@ import { Button, Modal, Upload, Icon } from 'antd';
 import './EditorImage.less'
 interface IProps {
   successCBK: (value: any) => void
-  fileList:IFileList[]
+  // fileList:IFileList[]
 }
 
-interface IFileList {
-  uid: string
-  name: string
-  url: string
-  status: string
-  size:number
-}
+// interface IFileList {
+//   uid: string
+//   name: string
+//   url: string
+//   status: string
+//   size:number
+// }
 
 function getBase64(file: Blob) {
   return new Promise((resolve, reject) => {
@@ -27,16 +27,16 @@ class EditorImage extends React.Component<IProps> {
     visible: false,
     previewVisible: false,
     previewImage: '',
-    fileList: [
-      {
-        size:1,
-        uid: '-1',
-        name: 'image.png',
-        status: 'done',
-        url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
-      }
-    ]
-  }
+    fileList :[
+      // {
+      //   size:1,
+      //   uid: '-1',
+      //   name: 'image.png',
+      //   status:'done',
+      //   url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+      //   type:'12'
+      // }
+    ]}
 
 
   public handlePreview = async (file: any) => {
