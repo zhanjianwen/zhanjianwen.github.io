@@ -3,16 +3,8 @@ import { Button, Modal, Upload, Icon } from 'antd';
 import './EditorImage.less'
 interface IProps {
   successCBK: (value: any) => void
-  // fileList:IFileList[]
 }
 
-// interface IFileList {
-//   uid: string
-//   name: string
-//   url: string
-//   status: string
-//   size:number
-// }
 
 function getBase64(file: Blob) {
   return new Promise((resolve, reject) => {
@@ -27,64 +19,65 @@ class EditorImage extends React.Component<IProps> {
     visible: false,
     previewVisible: false,
     previewImage: '',
-    fileList :[
-      // {
-      //   size:1,
-      //   uid: '-1',
-      //   name: 'image.png',
-      //   status:'done',
-      //   url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-      //   type:'12'
-      // }
-    ]}
+    fileList: [
+      {
+        size: 1,
+        uid: '-1',
+        name: 'image.png',
+        url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        type: 'UploadFile'
+      }
+    ]
+  }
 
 
-  public handlePreview = async (file: any) => {
+  handlePreview = async (file: any) => {
     if (!file.url && !file.preview) {
       file.preview = await getBase64(file.originFileObj);
     }
-
     this.setState({
       previewImage: file.url || file.preview,
       previewVisible: true,
     });
   };
-  public handleCancel = () => this.setState({ previewVisible: false });
-
-  // async function file:Promise{
-  //   if (!file.url && !file.preview) {
-  //     file.preview = await (getBase64(file.originFileObj:any));
-  //   }
-
-  //   this.setState({
-  //     previewImage: file.url || file.preview,
-  //     previewVisible: true,
-  //   });
-  // };
-
-  public handleChange = (fileList: any) => {
-    this.setState({ fileList: fileList })
+  handleCancel = () => {
+    this.setState({ visible: false })
   };
 
-  public handleOk = () => {
+  handleChange = (info: any) => {
+    let fileList = [...info.fileList];
+    fileList = fileList.slice(-2);
+    fileList = fileList.map(file => {
+      if (file.response) {
+        file.url = file.response.url;
+      }
+      return file;
+    });
+
+    this.setState({ fileList });
+  };
+
+  handleOk = () => {
     this.setState({
       visible: false,
     });
   };
 
-  public handleCancelUpload = () => {
+  handleCancelUpload = () => {
     this.setState({
       visible: false,
     });
   };
-
-  public Upload = () => {
-    const { visible } = this.state;
-    this.setState({ visible: !visible })
+  Upload = () => {
+    this.setState({ visible: true })
   }
-  public render() {
-    const { } = this.props;
-    const { visible, fileList, previewVisible, previewImage } = this.state;
+  render() {
+    const props = {
+      action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+      onChange: this.handleChange,
+      multiple: true,
+    };
+    const { visible, previewVisible, fileList, previewImage } = this.state;
     const uploadButton = (
       <div>
         <Icon type="plus" />
@@ -101,7 +94,7 @@ class EditorImage extends React.Component<IProps> {
           onCancel={this.handleCancel}
         >
           <div>
-            <Upload
+            <Upload {...props}
               action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
               listType="picture-card"
               fileList={fileList}
