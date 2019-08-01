@@ -90,7 +90,6 @@ class Tinymce extends React.Component<IProps> {
         })
       },
       setup(editor: any) {
-        debugger
         editor.on('FullscreenStateChanged', (e: any) => {
           _this.setState({
             fullscreen: e.state

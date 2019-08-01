@@ -36,6 +36,8 @@ class Dashboard extends React.Component<IProps> {
       children: [
         { label: '富文本编辑', url: '/admin/tinymce', icon: 'file-markdown', key: 'tinymce' }
       ]
+    }, {
+      label: 'PDF', url: '/admin/PDF', icon: 'file-pdf', key: 'PDF'
     },
   ]
   public state = {

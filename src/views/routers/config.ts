@@ -26,6 +26,11 @@ const configs: any = [{
     name: 'Components',
     title: '富文本编辑',
     component: 'Tinymce'
+  }, {
+    path: '/admin/PDF',
+    name: 'Components',
+    title: 'PDF',
+    component: 'PDF'
   }
   ]
 },
