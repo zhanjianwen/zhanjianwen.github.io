@@ -1,22 +1,16 @@
 import * as React from 'react';
-import './App.css';
-
-import logo from './logo.svg';
-
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
-
-export default App;
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import NotFound from './views/components/NotFound';
+import Login from './views/pages/login/login';
+import Dashboard from './views/components/Dashboard';
+export default () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" render={() => <Redirect to="/admin/home" push />} />
+      <Route path="/admin" component={Dashboard} />
+      <Route path="/404" component={NotFound} />
+      <Route path="/login" component={Login} />
+      {/* <Route component={NotFound} /> */}
+    </Switch>
+  </Router>
+)
