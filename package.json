@@ -1,5 +1,4 @@
 {
-  "homepage": "https://zhanjianwen.github.io/zhanjianwen.github.io/",
   "name": "react-admin",
   "version": "0.1.0",
   "private": true,
@@ -71,8 +70,6 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
@@ -82,7 +79,6 @@
     "@types/node": "^12.6.6",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
-    "gh-pages": "^2.1.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "typescript": "^3.5.3"
