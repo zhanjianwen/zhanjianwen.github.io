@@ -10,7 +10,7 @@ import * as _ from 'lodash';
 import utils from './views/utils/index'
 import { Provider } from 'react-redux'
 import store from './views/redux'
-
+import './statics/css/animate.css'
 
 
 
