@@ -11,20 +11,9 @@ import utils from './views/utils/index'
 import { Provider } from 'react-redux'
 import store from './views/redux'
 import './statics/css/animate.css'
-
-
-
-
 import './mock/login'
 import './mock/logout'
 import './mock/home'
-
-
-
-
-
-
-
 
 
 
